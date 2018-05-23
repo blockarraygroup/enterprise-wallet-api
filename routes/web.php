@@ -20,6 +20,8 @@ $router->post('/auth/login', 'AuthController@login');
 $router->get('/auth/refresh-user', 'AuthController@refreshUser');
 $router->post('/auth/update-user', 'AuthController@updateUser');
 
+$router->post('/upload', 'UtilityController@postUpload');
+
 resource($router, 'address', 'API\AddressController');
 resource($router, 'application', 'API\ApplicationController');
 resource($router, 'contract', 'API\ContractController');

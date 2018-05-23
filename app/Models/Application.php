@@ -6,7 +6,7 @@ use Jenssegers\Mongodb\Eloquent\Model;
 class Application extends Model {
 	protected $collection = 'applications';
 
-    protected $fillable = ['name', 'url', 'user_id'];
+    protected $fillable = ['name', 'url', 'image', 'user_id'];
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
 

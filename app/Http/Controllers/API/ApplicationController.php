@@ -29,6 +29,7 @@ class ApplicationController extends APIController {
 	
 	public function update(Request $request, $id) {
 		$application = Application::find($id);
+		$user = $request->user();
 
         if ($user && Gate::allows('isSelf', $application)) {
             return parent::update($request, $id);

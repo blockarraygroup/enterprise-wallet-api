@@ -29,6 +29,7 @@ class AddressController extends APIController {
 
 	public function update(Request $request, $id) {
 		$address = Address::find($id);
+		$user = $request->user();
 
         if ($address && Gate::allows('isSelf', $address)) {
             return parent::update($request, $id);

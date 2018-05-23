@@ -17,6 +17,7 @@ class CreateApplicationsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('url');
+            $table->string('image');
             $table->string('user_id');
             $table->timestamps();
         });
