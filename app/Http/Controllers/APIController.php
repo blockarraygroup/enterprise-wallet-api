@@ -15,7 +15,7 @@ class APIController extends Controller {
 
 	public function index(Request $request) {
 		$params = $request->except($this->blacklisted_fields);
-
+		
 		$query = $this->model;
 
 		foreach ($params as $key => $value) {
@@ -26,7 +26,7 @@ class APIController extends Controller {
 				case 'limit':
 					break;
 				default:
-					$query->where($key, $value);
+					$query = $query->where($key, $value);
 			}
 		}
 
