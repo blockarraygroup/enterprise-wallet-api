@@ -69,8 +69,13 @@ class AuthController extends Controller {
 				$response['password_change'] = true;
 			}
 			$user->save();
+			
+			$user_data = $user->toArray();
+			$user_data['access_token'] = $user['access_token'];
+			$user_data['access_token_expiry'] = $user['access_token_expiry'];
+
 			$response['success'] = true;
-			$response['user'] = $user;
+			$response['user'] = $user_data;
 		}
 		return $response;
 	}
